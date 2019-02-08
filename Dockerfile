@@ -7,5 +7,4 @@ RUN node index.js
 
 FROM postgres:11-alpine
 COPY --from=generate_data /app/customer.csv .
-COPY ./scripts/1-init-db.sql /docker-entrypoint-initdb.d/1-init-db.sql
-COPY ./scripts/2-setup-tables.sql /docker-entrypoint-initdb.d/2-setup-tables.sql
+COPY ./scripts/*.sql /docker-entrypoint-initdb.d/

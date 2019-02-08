@@ -12,10 +12,8 @@ fs.open("customer.csv", "w", (err, fd) => {
 
   // create an IV for each person and a shared secret for decrypting.
   if (err) throw err;
-  writeFile(
-    "first_name,last_name,email,phone,street_address,city,state,zip_code,created_dtm\n"
-  );
-  for (let i = 0; i < 100000; ++i) {
+  writeFile("first_name,last_name,email,phone,street_address,city,state_abbr,zip_code,created_dtm\n");
+  for (let i = 0; i < 10000; ++i) {
     const firstName = faker.name.firstName();
     const lastName = faker.name.lastName();
     const email = faker.internet.email(firstName, lastName).toLowerCase();
@@ -33,3 +31,5 @@ fs.open("customer.csv", "w", (err, fd) => {
   }
   fs.close(fd, logError);
 });
+
+
