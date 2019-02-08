@@ -1,5 +1,5 @@
 \connect ecomm;
-SET search_path TO ecomm;
+SET search_path TO graphql;
 
 CREATE TABLE customer (
     email VARCHAR(255) PRIMARY KEY,
